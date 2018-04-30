@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: GatewayService
+  cloud:
+    config:
+      name: ConfigServer
+      uri: http://localhost:8888/

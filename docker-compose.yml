@@ -1,0 +1,20 @@
+version: '3'
+config-service:
+  image: config-service
+  ports:
+  - "8080:8080"
+  
+discovery-service:
+  image: discovery-service
+  ports:
+  - "8080:8080"
+  depends:
+  - config-service
+  
+gateway-service:
+  image: gateway-service
+  ports:
+  - "8080:8080"
+  depends:
+  - config-service
+  - discovery-service

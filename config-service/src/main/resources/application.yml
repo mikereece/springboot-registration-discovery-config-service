@@ -1,0 +1,25 @@
+
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+ribbon:
+  eureka:
+    enabled: true
+
+spring:
+  application:
+    name: ConfigServer
+  cloud:
+    config:
+      name: ConfigServer
+      server:
+        git:
+          uri: file://c://workspace/config-service/src/main/resource/config-files
+        native:
+          search-locations: classpath:config-files/
